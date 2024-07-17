@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Employee Management System</h1>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <!-- Top Iframe for Create Form -->
+    <iframe src="@Url.Action("Create", "Employee")" style="width: 80%; height: 240px; border: 1px solid #ccc; margin-bottom: 20px;"></iframe>
+
+    @* <!-- Bottom Iframe for Index Table -->
+    <iframe src="@Url.Action("Index", "Employee")" style="width: 80%; height: 300px; border: 1px solid #ccc;"></iframe> *@
+</div>
+

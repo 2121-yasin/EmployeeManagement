@@ -1,0 +1,45 @@
+@model Employee
+
+<div class="text-center">
+    <h1 class="display-4">Add Employee Details</h1>
+</div>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="EmployeeName"></label>
+        <input asp-for="EmployeeName" class="form-control" />
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EmployeeCode"></label>
+        <input asp-for="EmployeeCode" class="form-control" />
+        <span asp-validation-for="EmployeeCode" class="text-danger"></span>
+    </div>
+
+    <!-- Salary Details Section -->
+    <div style="display: flex; align-items: center; margin-top: 10px;">
+        <div style="flex: 1;">
+            <label style="margin-right: 10px;">Select Year</label>
+            <select asp-for="SalaryDetails[0].Year" class="form-control">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+            </select>
+        </div>
+        <div style="flex: 1;">
+            <label style="margin-right: 10px;">Enter Salary</label>
+            <input asp-for="SalaryDetails[0].Amount" class="form-control" style="margin-right: 10px;" />
+        </div>
+        <button type="button" id="addMore" style="margin-left: 10px;margin-top: 20px;height: 32px;">+ Add More</button>
+    </div>
+
+    <button type="submit" style="margin-top: 10px;margin-left: 10px">Submit</button>
+    <button type="reset" style="margin-top: 10px; margin-left: 70px;">Reset</button>
+</form>
